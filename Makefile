@@ -6,7 +6,7 @@
 #    By: pyammoun <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/11 10:40:50 by pyammoun          #+#    #+#              #
-#    Updated: 2021/11/16 17:10:13 by pyammoun         ###   ########.fr        #
+#    Updated: 2021/11/17 12:18:10 by pyammoun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,6 @@ SRCS = ft_printf.c \
 
 
 OBJS= ${SRCS:.c=.o}
-
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CFLAGS= -Wall -Werror -Wextra
 NAME = libftprintf.a
@@ -31,10 +29,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@echo make $(NAME)
 	ar -rcs $(NAME) $(OBJS) 
-
-bonus: $(OBJS_BONUS)
-	@echo make $(NAME)
-	ar -rcs $(NAME) $(OBJS_BONUS)
 
 re:	fclean $(NAME)
 
