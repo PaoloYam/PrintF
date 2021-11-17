@@ -6,7 +6,7 @@
 /*   By: pyammoun <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 14:35:13 by pyammoun          #+#    #+#             */
-/*   Updated: 2021/11/16 17:27:47 by pyammoun         ###   ########.fr       */
+/*   Updated: 2021/11/17 12:12:48 by pyammoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_checku(char c, va_list args, int *counter)
 		ft_putnbru(va_arg(args, unsigned int), counter);
 	else if (c == 'p')
 	{
-		write (1, "0X", 2);
+		write (1, "0x", 2);
 		*counter = *counter + 2;
-		ft_putnbr_basep((unsigned long)va_arg(args, void *), counter);
+		ft_putnbr_basep(va_arg(args, unsigned long), counter);
 	}
 	else if (c == 'x')
 		ft_putnbr_base(va_arg(args, unsigned int), counter, "0123456789abcdef");
@@ -67,15 +67,29 @@ int	ft_printf(const char *format, ...)
 	int	i;
 	char	v;
 	char s[] = "hello";
+	char s1[] = "les amis";
+	char s2[] = "$a va";
 	int	c;
 	
 	v = 'D';
 	i = 2356467;
 	c = v;
 	
+	printf("\n%d", ft_printf(" %p %p ", 0, 0));
+	printf("\n");	
+	printf("\n%d", printf(" %p ", 1));
+	printf("\n");
 	printf("\n%d", ft_printf(" %p ", s));
 	printf("\n");
 	printf("\n%d", printf(" %p ", s));
+	printf("\n");
+	printf("\n%d", ft_printf(" %p ", s1));
+	printf("\n");
+	printf("\n%d", printf(" %p ", s1));
+	printf("\n");
+	printf("\n%d", ft_printf(" %p ", s2));
+	printf("\n");
+	printf("\n%d", printf(" %p ", s2));
 	printf("\n");
 	printf("\n%d", ft_printf(" %x ", 17));
 	printf("\n");
@@ -97,5 +111,5 @@ int	ft_printf(const char *format, ...)
 	printf("\n");
 	printf("\n%d", printf(" %s %s %s %s %s ", " - ", "", "4", "", "2 "));
 	printf("\n");
-	return (0);`
+	return (0);
 }*/
