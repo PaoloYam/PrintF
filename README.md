@@ -1,2 +1,2 @@
 # PrintF
-  A simple project in C where i recode th e printf() function from libc. 
+  A simple project in C where I recode the printf() function from libc. 
